@@ -1,0 +1,69 @@
+﻿        <!-- Main Header -->
+<div class="main-header">
+    <div class="container">
+        <!-- TopNav -->
+        <div class="topnav navbar-header">
+            <a class="navbar-toggle down-button" data-toggle="collapse" data-target=".slidedown">
+                <i class="fa fa-angle-down icon-current"></i>
+            </a>
+        </div>
+        <!-- /TopNav-->
+        <!-- Logo -->
+        <div class="logo pull-left">
+            <h1>
+                <a href="@Url.Action("Index", "Home")">
+                    <img class="logo-color" src="@Href("~/Img/logos/KevinSharp_SmallLogoWeb.png")" alt="Kevin Sharp Training" width="304" height="60">
+                </a>
+            </h1>
+        </div>
+        <!-- /Logo -->
+        <!-- Mobile Menu -->
+        <div class="mobile navbar-header">
+            <a class="navbar-toggle" data-toggle="collapse" href=".navbar-collapse">
+                <i class="fa fa-bars fa-2x"></i>
+            </a>
+        </div>
+        <!-- /Mobile Menu -->
+        <!-- Menu Start -->
+        <nav class="collapse navbar-collapse menu">
+            <ul class="nav navbar-nav sf-menu">
+                <li class="@Html.IsSelected(actions: "Index", controllers: "Home", cssClass: "active")">
+                    @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "sf-with-ul" })
+                </li>
+                @*<li class="@Html.IsSelected(actions: "Blog", controllers: "Home", cssClass: "active")">
+                    @Html.ActionLink("Blog", "Blog", "Home", new { area = "" }, new { @class = "sf-with-ul" })
+                </li>*@
+                <li class="@Html.IsSelected(actions: "Courses", controllers: "Home", cssClass: "active")">
+                    @Html.ActionLink("Courses", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })
+                    @*<a href="@Url.Action("Courses", "Home")">
+                        Courses
+                        <span class="sf-sub-indicator">
+                            <i class="fa fa-angle-down "></i>
+                        </span>
+                    </a>
+                    <ul>
+                        <li>@Html.ActionLink("How to start your career as a .NET developer", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("C# 5.0 Fundamentals", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("C# Exotics: Generics, LINQ and Reflection", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("ASP.NET 5 Introduction", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("ASP.NET MVC 5 Fundamentals", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("Microsoft WCF (Windows Communication Foundation) Deep Dive", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("The MS-SQL database and Entity Framework 6", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                        <li>@Html.ActionLink("Building a website with HTML5, jQuery and Bootstrap", "Courses", "Home", new { area = "" }, new { @class = "sf-with-ul" })</li>
+                    </ul>*@
+                </li>
+                @*<li class="@Html.IsSelected(actions: "OneOnOne", controllers: "Home", cssClass: "active")">
+                    @Html.ActionLink("One-on-One", "OneOnOne", "Home", new { area = "" }, new { @class = "sf-with-ul" })
+                </li>*@
+                <li class="@Html.IsSelected(actions: "About", controllers: "Home", cssClass: "active")">
+                    @Html.ActionLink("About me", "About", "Home", new { area = "" }, new { @class = "sf-with-ul" })
+                </li>
+                <li class="@Html.IsSelected(actions: "Contact", controllers: "Home", cssClass: "active")">
+                    @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "sf-with-ul" })
+                </li>
+            </ul>
+        </nav>
+        <!-- /Menu -->
+    </div>
+</div>
+<!-- /Main Header -->

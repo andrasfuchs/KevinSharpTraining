@@ -1,0 +1,618 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!-- Slider -->
+<div class="fullwidthbanner-container tp-banner-container">
+    <div class="fullwidthbanner rslider tp-banner">
+        <ul style="visibility: visible;">
+            <!-- THE FIRST SLIDE -->
+            <li data-transition="fade" data-slotamount="1" data-masterspeed="2000" data-delay="7000" data-saveperformance="on">
+                <!-- MAIN IMAGE -->
+                <img src="@Href("~/Img/dummy.png")"
+                     alt="slider-bg-1"
+                     data-lazyload="@Href("~/Img/slider/slider-bg-1.jpg")"
+                     data-bgposition="right top"
+                     data-kenburns="on"
+                     data-duration="8000"
+                     data-ease="Power0.easeInOut"
+                     data-bgfit="115"
+                     data-bgfitend="100"
+                     data-bgpositionend="center bottom" />
+                <!-- LAYERS -->
+                <!-- LAYER NR. 1 - MICROSOFT CERTIFIED -->
+                <div class="tp-caption light_heavy_70 skewfromleftshort fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="500"
+                     data-y="60"
+                     data-speed="500"
+                     data-start="2400"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="chars"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
+                    Microsoft Certified
+                </div>
+                <!-- LAYER NR. 2 SOLUTION DEVELOPER -->
+                <div class="tp-caption light_heavy_50 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="697"
+                     data-y="130"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2850"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">
+                    Solution Developer
+                </div>
+                <!-- LAYER NR. 5 -->
+                <div class="tp-caption black_bold_bg_20 sfr fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="881"
+                     data-y="230"
+                     data-speed="300"
+                     data-start="4000"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
+                    Microsoft C# 5.0
+                </div>
+                <!-- LAYER NR. 6 -->
+                <div class="tp-caption orangebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="850"
+                     data-y="230"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="4000"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 7 -->
+                <div class="tp-caption arrowicon customin fadeout rs-parallaxlevel-10"
+                     data-x="859"
+                     data-y="236"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="4200"
+                     data-easing="Power3.easeInOut"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 8;">
+                    <img src="img/dummy.png" alt="" data-ww="17" data-hh="17" data-lazyload="img/check.png">
+                </div>
+                <!-- LAYER NR. 8 -->
+                <div class="tp-caption black_bold_bg_20 sfr fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="881"
+                     data-y="270"
+                     data-speed="300"
+                     data-start="4500"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">
+                    ASP.NET MVC 5
+                </div>
+                <!-- LAYER NR. 9 -->
+                <div class="tp-caption orangebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="850"
+                     data-y="270"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="4500"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 10; max-width: auto; max-height: auto; white-space: nowrap;">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 10 -->
+                <div class="tp-caption arrowicon customin fadeout rs-parallaxlevel-10"
+                     data-x="859"
+                     data-y="277"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="4700"
+                     data-easing="Power3.easeInOut"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 11;">
+                    <img src="img/dummy.png" alt="" data-ww="17" data-hh="17" data-lazyload="img/check.png">
+                </div>
+                <!-- LAYER NR. 11 -->
+                <div class="tp-caption black_bold_bg_20 sfr fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="881"
+                     data-y="310"
+                     data-speed="300"
+                     data-start="5000"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;">
+                    HTML5 and CSS3
+                </div>
+                <!-- LAYER NR. 12 -->
+                <div class="tp-caption orangebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="850"
+                     data-y="310"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="5000"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 13; max-width: auto; max-height: auto; white-space: nowrap;">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 13 -->
+                <div class="tp-caption arrowicon customin fadeout rs-parallaxlevel-10"
+                     data-x="859"
+                     data-y="317"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="5200"
+                     data-easing="Power3.easeInOut"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 14;">
+                    <img src="img/dummy.png" alt="" data-ww="17" data-hh="17" data-lazyload="img/check.png">
+                </div>
+                <!-- LAYER NR. 11 -->
+                <div class="tp-caption black_bold_bg_20 sfr fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="881"
+                     data-y="350"
+                     data-speed="300"
+                     data-start="5500"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;">
+                    Bootstrap 3
+                </div>
+                <!-- LAYER NR. 12 -->
+                <div class="tp-caption orangebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="850"
+                     data-y="350"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="5500"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 13; max-width: auto; max-height: auto; white-space: nowrap;">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 13 -->
+                <div class="tp-caption arrowicon customin fadeout rs-parallaxlevel-10"
+                     data-x="859"
+                     data-y="357"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="5700"
+                     data-easing="Power3.easeInOut"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 14;">
+                    <img src="img/dummy.png" alt="" data-ww="17" data-hh="17" data-lazyload="img/check.png">
+                </div>
+                <!-- LAYER NR. 11 -->
+                <div class="tp-caption black_bold_bg_20 sfr fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="881"
+                     data-y="390"
+                     data-speed="300"
+                     data-start="6000"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;">
+                    JavaScript and jQuery
+                </div>
+                <!-- LAYER NR. 12 -->
+                <div class="tp-caption orangebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="850"
+                     data-y="390"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="6000"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 13; max-width: auto; max-height: auto; white-space: nowrap;">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 13 -->
+                <div class="tp-caption arrowicon customin fadeout rs-parallaxlevel-10"
+                     data-x="859"
+                     data-y="397"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="6200"
+                     data-easing="Power3.easeInOut"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 14;">
+                    <img src="img/dummy.png" alt="" data-ww="17" data-hh="17" data-lazyload="img/check.png">
+                </div>
+            </li>
+            <!-- /THE FIRST SLIDE -->
+            <!-- THE SECOND SLIDE -->
+            <li data-transition="3dcurtain-vertical" data-slotamount="5" data-masterspeed="500" data-delay="7000">
+
+                <img src="@Href("~/Img/slider/slider-bg-2.jpg")"
+                     alt=""
+                     data-fullwidthcentering="on">
+                <!-- LAYER NR. 1 - Caption -->
+                <div class="tp-caption light_heavy_70 sft tp-resizeme rs-parallaxlevel-10"
+                     data-x="250"
+                     data-y="30"
+                     data-speed="500"
+                     data-start="500"
+                     data-easing="Power3.easeInOut"
+                     data-splitin="words"
+                     data-splitout="none"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300">
+                    PREMIUM COURSES
+                </div>
+                <!-- LAYER NR. 2-3-4 - Subtitle -->
+                <div class="tp-caption fade rs-parallaxlevel-10"
+                     data-x="380"
+                     data-y="118"
+                     data-speed="300"
+                     data-start="900"
+                     data-easing="Power3.easeInOut"
+                     data-elementdelay="0.1"
+                     data-endelementdelay="0.1"
+                     data-endspeed="300"
+                     style="z-index: 2;">
+                    <img src="img/dummy.png" alt="" data-lazyload="@Href("~/Img/whitebg_big.png")">
+                </div>
+                <div class="caption large_text sfl"
+                     data-x="410"
+                     data-y="134"
+                     data-speed="1000"
+                     data-start="900"
+                     data-easing="easeOutExpo"
+                     style="z-index: 3;">
+                    <span class="purple">BEGINNER</span>
+                </div>
+                <div class="caption medium_text fade"
+                     data-x="439"
+                     data-y="172"
+                     data-speed="300"
+                     data-start="1300"
+                     data-easing="easeOutExpo"
+                     style="z-index: 4;"><span class="black">AND</span></div>
+                <div class="caption large_text sfr"
+                     data-x="488"
+                     data-y="168"
+                     data-speed="300"
+                     data-start="1700"
+                     data-easing="easeOutExpo"
+                     style="z-index: 5;"><span class="blue">INTERMEDIATE</span></div>
+
+
+                <!-- BEGINNER COURSES -->
+                <!-- LAYER NR. 5 - 1st text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="50"
+                     data-y="270"
+                     data-speed="300"
+                     data-start="2000">
+                    Getting started with .NET and Visual Studio 2013
+                </div>
+                <!-- LAYER NR. 6 - 1st box -->
+                <div class="tp-caption purplebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="19"
+                     data-y="270"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2000">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 8 - 2nd text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="50"
+                     data-y="310"
+                     data-speed="300"
+                     data-start="2400">
+                    C# 5.0 Fundamentals
+                </div>
+                <!-- LAYER NR. 9 - 2nd box -->
+                <div class="tp-caption purplebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="19"
+                     data-y="310"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2400">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 10 - 3rd text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="50"
+                     data-y="350"
+                     data-speed="300"
+                     data-start="2800">
+                    Introduction to ASP.NET 5.0
+                </div>
+                <!-- LAYER NR. 11 - 3rd box -->
+                <div class="tp-caption purplebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="19"
+                     data-y="350"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2800">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 12 - 4th text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="50"
+                     data-y="390"
+                     data-speed="300"
+                     data-start="3200">
+                    ASP.NET MVC 5 Fundamentals
+                </div>
+                <!-- LAYER NR. 13 - 4th box -->
+                <div class="tp-caption purplebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="19"
+                     data-y="390"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="3200">
+                    &nbsp;
+                </div>
+
+                <!-- INTERMEDIATE COURSES -->
+                <!-- LAYER NR. 14 - 1st text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="620"
+                     data-y="270"
+                     data-speed="300"
+                     data-start="2000">
+                    C# Exotics: Generics, LINQ and Reflection
+                </div>
+                <!-- LAYER NR. 15 - 1st box -->
+                <div class="tp-caption bluebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="589"
+                     data-y="270"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2000">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 16 - 2nd text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="620"
+                     data-y="310"
+                     data-speed="300"
+                     data-start="2400">
+                    Windows Communication Foundation (WCF) Deep Dive
+                </div>
+                <!-- LAYER NR. 17 - 2nd box -->
+                <div class="tp-caption bluebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="589"
+                     data-y="310"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2400">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 18 - 3rd text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="620"
+                     data-y="350"
+                     data-speed="300"
+                     data-start="2800">
+                     MS-SQL databases and Entity Framework 6
+                </div>
+                <!-- LAYER NR. 19 - 3rd box -->
+                <div class="tp-caption bluebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="589"
+                     data-y="350"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="2800">
+                    &nbsp;
+                </div>
+                <!-- LAYER NR. 20 - 4th text -->
+                <div class="tp-caption black_bold_bg_20 sfl tp-resizeme rs-parallaxlevel-10"
+                     data-x="620"
+                     data-y="390"
+                     data-speed="300"
+                     data-start="3200">
+                    Building Websites with HTML5, jQuery and Bootstrap
+                </div>
+                <!-- LAYER NR. 21 - 4th box -->
+                <div class="tp-caption bluebox30 customin fadeout tp-resizeme rs-parallaxlevel-10"
+                     data-x="589"
+                     data-y="390"
+                     data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                     data-speed="300"
+                     data-start="3200">
+                    &nbsp;
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Slider -->
+<!-- Main Content -->
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 wow swing">
+                <div class="content-box big ch-item">
+                    <div class="ch-info-wrap">
+                        <div class="ch-info">
+                            <div class="ch-info-front ch-img-1"><i class="fa fa-tags"></i></div>
+                            <div class="ch-info-back">
+                                <i class="fa fa-tags"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-box-info">
+                        <h3>Premium Courses</h3>
+                        <p>
+                            In my live courses I introduce you to the most up-to-date technologies.<br />No small-talk, just pure knowledge.
+                        </p>
+                        <a href="@Url.Action("Courses", "Home")">Check out my courses! <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div class="border-bottom margin-top30">
+                    </div>
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 wow swing">
+                <div class="content-box big ch-item bottom-pad-small">
+                    <div class="ch-info-wrap">
+                        <div class="ch-info">
+                            <div class="ch-info-front ch-img-1"><i class="fa fa-rocket"></i></div>
+                            <div class="ch-info-back">
+                                <i class="fa fa-rocket"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-box-info">
+                        <h3>One-on-One Consultancy</h3>
+                        <p>
+                            There is no better way to learn programming than learning from <br />an experienced coder who has done it for years.
+                        </p>                        
+                        <a href="@Url.Action("OneOnOne", "Home")">Get your free 20-minute consultancy now! <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div class="border-bottom margin-top30">
+                    </div>
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main Content -->
+<!-- Slogan -->
+<div class="slogan bottom-pad-small">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="slogan-content">
+                    <div class="col-lg-10 col-md-10 wow fadeInLeft">
+                        <h2 class="slogan-title">Still hesitating? Let me show you how to code with passion!</h2>
+                    </div>
+                    <div class="col-lg-2 col-md-2 wow fadeInRight">
+                        <div class="get-started">
+                            <a href="#" class="btn-special btn-grey pull-right">Watch it</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Slogan -->
+<!-- Our Clients -->
+<div class="our-clients">
+    <div class="container">
+        <div class="row">
+            <div class="client">
+                <div class="client-logo">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="text-center">
+                            <h2 class="wow bounceIn">My Previous Clients</h2>
+                            <h4 class="wow fadeInRight">
+                                Some of my satisfied clients over the world
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="clearfix"></div>
+                        <div class="row text-center padding-top40">
+                            <div id="client-carousel" class="client-carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 item wow fadeIn">
+                                            <div class="item-inner"><a href="#"><img alt="Upportdash" src="@Href("~/Img/clientslogo/logo_Vodafone_238x88.png")"></a></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 item wow fadeIn">
+                                            <div class="item-inner"><a href="#"><img alt="Upportdash" src="@Href("~/Img/clientslogo/logo_HP_238x88.png")"></a></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 item wow fadeIn">
+                                            <div class="item-inner"><a href="#"><img alt="Upportdash" src="@Href("~/Img/clientslogo/logo_Epicor_238x88.png")"></a></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 item wow fadeIn">
+                                            <div class="item-inner"><a href="#"><img alt="Upportdash" src="@Href("~/Img/clientslogo/logo_EDS_238x88.png")"></a></div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 item">
+                                            <div class="item-inner"><a href="#"><img alt="Upportdash" src="@Href("~/Img/clientslogo/logo_HugoAndCat_238x88.png")"></a></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 item">
+                                            <div class="item-inner"><a href="#"><img alt="Upportdash" src="@Href("~/Img/clientslogo/logo_DolphinDynamics_238x88.png")"></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                        <div class="clients-title">
+                            <h3 class="title">&nbsp;</h3>
+                            <div class="carousel-controls pull-right">
+                                <a class="prev" href="#client-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                                <a class="next" href="#client-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Our Clients -->

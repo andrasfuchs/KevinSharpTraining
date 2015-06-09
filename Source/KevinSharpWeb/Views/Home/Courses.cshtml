@@ -1,0 +1,280 @@
+﻿@{
+    ViewBag.Title = "Courses";
+}
+
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <h2 class="title">@ViewBag.Title</h2>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <div class="breadcrumbs pull-right">
+                        <ul>
+                            <li>You are now on:</li>
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li>Courses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="content margin-top60 margin-bottom60">
+    <div class="container">
+        <div class="row">
+            <!-- Content -->
+            <div class="content col-sm-9 col-md-9">
+
+                @if (!Request.IsAuthenticated)
+                {
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <a id="loginwarninglink">
+                        You need to login with your Google account first in order to choose a course. Click here to continue!
+                    </a>
+                </div>
+                }
+                <!-- check out steps -->
+                <ul id="checkoutsteps" class="clearfix panel-group">
+                    <!-- Panel 1 -->
+                    <li class="panel @(Request.IsAuthenticated ? "" : "optiondisabled")" id="coursespanel">
+                        <a href="#step-1" class="step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                            <div class="number">1</div>
+                            <h6>Choose Course</h6>
+                        </a>
+                        <div id="step-1" class="collapse in">
+                            <div class="step-content">
+                                <div class="row courses">
+                                    <div class="col-sm-12 col-md-12 bottom-padding-mobile">
+                                        <h3 class="title optiondisabled"><span class="coursecode beginner">C#01</span>Getting started with .NET and Visual Studio 2013 (coming in June)<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title" id="csfundamentals"><span class="coursecode beginner">C#02</span>C# 5.0 Fundamentals<span class="duration">2x 3.5 hours</span></h3>
+                                        <h4>Modules</h4>
+                                        <ul>
+                                            <li>Introduction to C#<span class="duration">1 hour</span></li>
+                                            <li>Classes and Objects in C#<span class="duration">1 hour</span></li>
+                                            <li>Types and Assemblies<span class="duration">1 hour</span></li>
+                                            <li>Q&A<span class="duration">0.5 hours</span></li>
+                                            <li>Members: Methods, Events and Properties<span class="duration">1 hour</span></li>
+                                            <li>Flow Control<span class="duration">1 hour</span></li>
+                                            <li>Object Oriented Programming<span class="duration">1 hour</span></li>
+                                            <li>Q&A<span class="duration">0.5 hours</span></li>
+                                        </ul>
+                                        <h3 class="title optiondisabled"><span class="coursecode beginner">C#03</span>Introduction to ASP.NET 5.0 (coming in July)<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title optiondisabled"><span class="coursecode beginner">C#04</span>ASP.NET MVC 5 Fundamentals (coming in August)<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title optiondisabled"><span class="coursecode intermediate">C#05</span>C# Exotics: Generics, LINQ and Reflection (coming in July)<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title optiondisabled"><span class="coursecode intermediate">C#06</span>Windows Communication Foundation (WCF) Deep Dive (coming in August)<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title optiondisabled"><span class="coursecode intermediate">C#07</span>MS-SQL databases and Entity Framework 6 (coming in September)<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title optiondisabled"><span class="coursecode intermediate">C#08</span>Building Websites with HTML5, jQuery and Bootstrap (coming in November)<span class="duration">2x 3.5 hours</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Panel 1 -->
+                    <!-- Panel 2 -->
+                    <li class="panel optiondisabled" id="schedulepanel">
+                        <a href="#step-2" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                            <div class="number">2</div>
+                            <h6>Schedule</h6>
+                        </a>
+                        <div id="step-2" class="collapse">
+                            <div class="step-content">
+                                <form class="row availabledates">
+                                    <h3 class="title">Option A: Efficient</h3>
+                                    <h5>Split the course into 3.5-hour-long classes, to maximize learning by keeping a few days break between sections</h5>
+                                    <div class="dateselection">
+                                        <select class="form-control">
+                                            <option>Select your prefered date</option>
+                                            <option value="2015-05-12, 2015-05-15">2015-05-12 Tuesday, 15:00 - 18:30 (CET) and 2015-05-15 Friday, 15:00 - 18:30 (CET)</option>
+                                            <option value="2015-05-19, 2015-05-22">2015-05-19 Tuesday, 15:00 - 18:30 (CET) and 2015-05-22 Friday, 15:00 - 18:30 (CET)</optionvalue>
+                                            <option value="2015-05-26, 2015-05-29">2015-05-26 Tuesday, 15:00 - 18:30 (CET) and 2015-05-29 Friday, 15:00 - 18:30 (CET)</option>
+                                        </select>
+                                    </div>
+
+                                    <h3 class="title">Option B: Intensive</h3>
+                                    <h5>Take 7-hour-long classes to minimize the days needed to complete the course</h5>
+                                    <div class="dateselection">
+                                        <select class="form-control">
+                                            <option>Select your prefered date</option>
+                                            <option value="2015-05-13">2015-05-13 Wednesday, 11:00 - 18:30 (CET)</option>
+                                            <option value="2015-05-20">2015-05-20 Wednesday, 11:00 - 18:30 (CET)</option>
+                                            <option value="2015-05-27">2015-05-27 Wednesday, 11:00 - 18:30 (CET)</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Panel 2 -->
+                    <!-- Panel 3 -->
+                    <li class="panel optiondisabled" id="billingpanel">
+                        <a href="#step-3" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                            <div class="number">3</div>
+                            <h6>Billing Information</h6>
+                        </a>
+                        <div id="step-3" class="collapse">
+                            <div class="step-content">
+                                <form class="row no-margin">
+                                    <div class="col-sm-6 col-md-6">
+                                        <input id="billingfirstname" class="form-control" placeholder="First Name" type="text" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=);">
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <input id="billinglastname" class="form-control" placeholder="Last Name" type="text">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <input id="billingcompany" class="form-control" placeholder="Company" type="text">
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <input class="form-control" placeholder="Email Address" type="text">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <input class="form-control" placeholder="Address" type="text">
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <input class="form-control" placeholder="City" type="text">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-sm-12 buttons-box text-right">
+                                        <button type="button" class="btn btn-color" id="billingcontinue">Continue</button>
+                                        <span class="required"><b>*</b> All fields are required</span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Panel 3 -->
+                    <!-- Panel 4 -->
+                    <li class="panel optiondisabled" id="paymentpanel">
+                        <a href="#step-4" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                            <div class="number">4</div>
+                            <h6>Finalize Booking</h6>
+                        </a>
+                        <div id="step-4" class="collapse">
+                            <div class="step-content">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Qty</th>
+                                                <th>Subtotal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Kevin Sharp training session (3.5 hours)</td>
+                                                <td>$245.00</td>
+                                                <td>2</td>
+                                                <td>$490.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Payment Processor fee</td>
+                                                <td>$1.50</td>
+                                                <td>1</td>
+                                                <td>$1.50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>First-timer discount</td>
+                                                <td>$150</td>
+                                                <td>1</td>
+                                                <td>$150</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">Total</td>
+                                                <td>$341.50</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <form>
+                                    <h3 class="title">Payment method</h3>
+                                    <div>
+                                        <label class="radio"><input type="radio" name="register"> Credit or debit card</label>
+                                        <label class="radio optiondisabled"><input type="radio" name="register"> Google Wallet</label>
+                                        <label class="radio optiondisabled"><input type="radio" name="register"> Bitcoin</label>
+                                    </div>
+                                </form>
+                                <div class="buttons-box text-right">
+                                    <button type="button" class="btn btn-color">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Panel 4 -->
+                    <!-- Panel 5 -->
+                    <li class="panel optiondisabled" id="reminderspanel">
+                        <a href="#step-5" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
+                            <div class="number">5</div>
+                            <h6>Setup Reminders (optional)</h6>
+                        </a>
+                        <div id="step-5" class="collapse">
+                            <div class="step-content">
+                                <div>
+                                    <label class="checkbox"><input type="checkbox" name="register"> Create an event in my Google Calendar</label>
+                                    <label class="checkbox"><input type="checkbox" name="register"> Send me an e-mail reminder 24 hours before the class</label>
+                                    <label class="checkbox"><input type="checkbox" name="register"> Send me a Google Hangouts message 1 hour before the class</label>
+                                </div>
+                                <button type="button" class="btn btn-color">Save settings</button>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- /Panel 5 -->
+                </ul>
+                <!-- /check out steps -->
+            </div>
+            <!-- /content -->
+            <!-- sidebar -->
+            <div id="sidebar" class="col-sm-3 col-md-3 sidebar checkout-progress">
+                <aside class="widget">
+                    <header>
+                        <h3 class="title">Your Checkout Progress</h3>
+                    </header>
+                    <ul class="progress-list">
+                        <li id="progresscourse" class="active">
+                            <a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>
+                            1, Choose Course
+                            <label></label>
+                        </li>
+
+                        <li id="progressschedule">
+                            <a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>
+                            2, Schedule
+                            <label></label>
+                        </li>
+                        <li id="progressbilling">
+                            <a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>
+                            3, Billing Information
+                            <label></label>
+                        </li>
+                        <li id="progresspayment">
+                            <a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>
+                            4, Finalize Booking
+                            <label></label>
+                        </li>
+                        <li id="progressreminders">
+                            <a href="#" class="edit"><i class="fa fa-pencil"></i> Edit</a>
+                            5, Setup Reminders
+                            <label></label>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- /sidebar -->
+
+        </div>
+    </div>
+</div>
+<!-- /Main Content -->
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("/Scripts/Views/Home/Courses.js")"></script>
+}
+
+

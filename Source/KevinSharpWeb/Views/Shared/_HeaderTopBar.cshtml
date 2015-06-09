@@ -1,0 +1,47 @@
+﻿<!-- Header Top Bar -->
+<div class="top-bar">
+    <div class="slidedown collapse">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="social pull-left">
+                    <li class="googleplus"><a href="https://plus.google.com/108707907055929830332"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="youtube"><a href="https://www.youtube.com/channel/UCAAWCWrFGRSBzoI9X-BlESQ"><i class="fa fa-youtube"></i></a></li>
+                    <li class="linkedin"><a href="https://www.linkedin.com/in/andrasfuchs"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="twitter"><a href="https://twitter.com/andrasfuchs"><i class="fa fa-twitter"></i></a></li>
+                    <li class="stackoverflow"><a href="http://stackoverflow.com/users/980247/andras"><i class="fa fa-stack-overflow"></i></a></li>
+                    <li class="rss"><a href="#"><i class="fa fa-rss"></i></a></li>
+                </ul>
+                <form method="get" action="#" class="headertop optiondisabled">
+                    <div class="input-group headertop">
+                        <span class="headertop">GET UPDATES</span>
+                        <input type="text" value="your e-mail" onfocus="if (this.value == 'your e-mail') this.value = '';" onblur="    if (this.value == '') this.value = 'your e-mail';" class="subscribe form-control headertop">
+                        <span class="input-group-btn">
+                            <button class="btn subscribe-btn headertop" type="button">Subscribe</button>
+                        </span>
+                    </div>
+                    <!-- /input-group -->
+                </form>
+            </div>
+            <div class="phone-login pull-right">
+                <i class="fa fa-phone"></i> Call me: <a href="tel:+1 863-225-3846">+1 863-225-3846</a>
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", new { Provider = "Google" }, FormMethod.Post, new { id = "logoutform" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="#" onclick="logoutform.submit();" id="loginlink"><i class="fa fa-sign-out"></i> Logout</a>
+                    }
+                }
+                else
+                {
+                    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Request.Url, Provider = "Google" }, FormMethod.Post, new { id = "loginform" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="#" onclick="loginform.submit();" id="loginlink"><i class="fa fa-sign-in"></i> Login</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Header Top Bar -->

@@ -1,0 +1,403 @@
+﻿@{
+    ViewBag.Title = "About me";
+}
+
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <h2 class="title">@ViewBag.Title</h2>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <div class="breadcrumbs pull-right">
+                        <ul>
+                            <li>You are now on:</li>
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li>About me</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="content margin-top60 margin-bottom60">
+    <div class="container">
+        <div class="row">
+            <div class="posts-block col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="team-member">
+                    <div class="team-member-holder">
+                        <div class="team-member-image">
+                            <img alt="" src="@Href("~/Img/AndrasFuchs_avatar_400x400.jpg")">
+                            <div class="team-member-links">
+                                <div class="team-member-links-list">
+                                    <a target="_blank" class="googleplus team-member-links-item" href="https://plus.google.com/+Andr%C3%A1sFuchs/posts"><i class="fa fa-google-plus"></i></a>
+                                    <a target="_blank" class="linkedin team-member-links-item" href="https://www.linkedin.com/in/andrasfuchs"><i class="fa fa-linkedin"></i></a>
+                                    <a target="_blank" class="twitter team-member-links-item" href="https://twitter.com/andrasfuchs"><i class="fa fa-twitter"></i></a>
+                                    <a target="_blank" class="stackoverflow team-member-links-item" href="http://stackoverflow.com/users/980247/andras"><i class="fa fa-stack-overflow"></i></a>
+                                    <a target="_blank" class="facebook team-member-links-item" href="https://www.facebook.com/andras.fuchs"><i class="fa fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Left Section End -->
+            <!-- welcome Section Start -->
+            <div class="welcome col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <h2 class="shorter">Andras <span>Fuchs</span></h2>
+                <h4 class="color">Microsoft Certified Professional</h4>
+                <div class="star-divider star-divider-small">
+                    <div class="star-divider-icon">
+                        <i class=" fa fa-star"></i>
+                    </div>
+                </div>
+                <p>
+                    I have been programming in the last 15 years and I hope I will do it in the next 15. My goal is to share my passion with many others along the way. This is the main reason I decided to start Kevin Sharp Training, I want to share my joy and I want to see you enjoy your work and boost your knowledge and career!
+                </p>
+
+                <p>
+                    After completing my courses, you will be able to:
+                    <ul class="list icons list-unstyled">
+                        <li><i class="fa fa-check"></i> Understand top-notch technologies on a deep level</li>
+                        <li><i class="fa fa-check"></i> Gain practical knowledge to speed up your daily work</li>
+                        <li><i class="fa fa-check"></i> Put your career on steroids and increase your salary </li>
+                        <li><i class="fa fa-check"></i> Enjoy your time programming, code with passion</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                <!-- Accordion -->
+                <div class="accordionMod panel-group">
+                    <div class="accordion-item">
+                        <h4 class="accordion-toggle">Skills</h4>
+                        <section class="accordion-inner panel-body skills">
+                            <div class="row vertical-center">
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="Visual Studio" alt="Visual Studio" src="@Href("~/Img/logos/technologies/visualstudio_500x125.png")">
+                                </a>
+                            </div>
+                            <div class="row vertical-center">
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title=".NET" alt=".NET" src="@Href("~/Img/logos/technologies/dotnet_250x250.png")">
+                                </a>
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="MS-SQL" alt="MS-SQL" src="@Href("~/Img/logos/technologies/sql_250x250.png")">
+                                </a>
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="Bootstrap" alt="Bootstrap" src="@Href("~/Img/logos/technologies/bootstrap_250x250.png")">
+                                </a>
+                            </div>
+                            <div class="row vertical-center">
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="HTML 5" alt="HTML 5" src="@Href("~/Img/logos/technologies/html_250x250.png")">
+                                </a>
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="CSS 3" alt="CSS 3" src="@Href("~/Img/logos/technologies/css_250x250.png")">
+                                </a>
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="JavaScript" alt="JavaScript" src="@Href("~/Img/logos/technologies/js_250x250.png")">
+                                </a>
+                            </div>
+                            <div class="row vertical-center">
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="jQuery" alt="jQuery" src="@Href("~/Img/logos/technologies/jquery_500x125.png")">
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-toggle">Certifications</h4>
+                        <section class="accordion-inner panel-body certifications">
+                            <div class="row vertical-center">
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="MSCS" alt="MSCS" src="@Href("~/Img/logos/certifications/MSCS_HTML5_250x250.png")">
+                                </a>
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="MCSD" alt="MCSD" src="@Href("~/Img/logos/certifications/MCSD_WebApplications_250x250.png")">
+                                </a>
+                                <a href="#" class="img-thumbnail img-polaroid">
+                                    <img title="MSCP" alt="MSCP" src="@Href("~/Img/logos/certifications/MSCP_250x250.png")">
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-toggle">Test Scores</h4>
+                        <section class="accordion-inner panel-body">
+                            <p>
+                                <div class="skills-wrap">
+                                    <div class="skillbar clearfix " data-percent="85%">
+                                        <div class="skillbar-title" style="background: #2eaa4a;"><span>2015-01 | CompTIA TK0-201: CTT+ Essentials (Professional Trainer exam)</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #34ac4f"></div>
+                                        <div class="skill-bar-percent">85%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="90%">
+                                        <div class="skillbar-title" style="background: #00a4aa;"><span>2014-08 | Microsoft 070-487: Developing Windows Azure and Web Services</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #0aa7ad"></div>
+                                        <div class="skill-bar-percent">90%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="98%">
+                                        <div class="skillbar-title" style="background: #026699;"><span>2014-07 | Microsoft 070-486: Developing ASP.NET MVC Web Applications</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #0b6c9d"></div>
+                                        <div class="skill-bar-percent">98%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="75%">
+                                        <div class="skillbar-title" style="background: #633393;"><span>2014-06 | Microsoft 070-480: Programming in HTML5 with JavaScript and CSS3</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #663795"></div>
+                                        <div class="skill-bar-percent">75%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="81%">
+                                        <div class="skillbar-title" style="background: #a91e23;"><span>2012-07 | Microsoft 070-518: Developing Windows Applications with .NET 4 (Pro)</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #aa2126"></div>
+                                        <div class="skill-bar-percent">81%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="80%">
+                                        <div class="skillbar-title" style="background: #ffc74e;"><span>2011-04 | Microsoft 070-513: Windows Communication Foundation (WCF 4)</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #ffc954"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="97%">
+                                        <div class="skillbar-title" style="background: #2eaa4a;"><span>2010-09 | Microsoft 070-515: Developing Web Applications with .NET 4</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #34ac4f"></div>
+                                        <div class="skill-bar-percent">97%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="97%">
+                                        <div class="skillbar-title" style="background: #00a4aa;"><span>2010-09 | Microsoft 070-516: Accessing Data with .NET 4</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #0aa7ad"></div>
+                                        <div class="skill-bar-percent">97%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="100%">
+                                        <div class="skillbar-title" style="background: #026699;"><span>2010-08 | Microsoft 070-511: Developing Windows Applications with .NET 4</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #0b6c9d"></div>
+                                        <div class="skill-bar-percent">100%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="81%">
+                                        <div class="skillbar-title" style="background: #633393;"><span>2009-02 | Microsoft 070-503: Windows Communication Foundation (WCF 3.5)</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #663795"></div>
+                                        <div class="skill-bar-percent">81%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="81%">
+                                        <div class="skillbar-title" style="background: #a91e23;"><span>2009-02 | Microsoft 070-536: Application Development Foundation</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #aa2126"></div>
+                                        <div class="skill-bar-percent">81%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="80%">
+                                        <div class="skillbar-title" style="background: #ffc74e;"><span>2006-02 | Microsoft 070-553: MCPD Enterprise Application Developer</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #ffc954"></div>
+                                        <div class="skill-bar-percent">80%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="70%">
+                                        <div class="skillbar-title" style="background: #2eaa4a;"><span>2005-08 | Microsoft 070-340: Implementing Security with C#</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #34ac4f"></div>
+                                        <div class="skill-bar-percent">70%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="94%">
+                                        <div class="skillbar-title" style="background: #00a4aa;"><span>2005-07 | Microsoft 070-315: Developing Web Applications with C#</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #0aa7ad"></div>
+                                        <div class="skill-bar-percent">94%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="95%">
+                                        <div class="skillbar-title" style="background: #026699;"><span>2005-01 | Microsoft 070-320: Developing XML Web Services with C#</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #0b6c9d"></div>
+                                        <div class="skill-bar-percent">95%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                    <div class="skillbar clearfix " data-percent="89%">
+                                        <div class="skillbar-title" style="background: #633393;"><span>2004-06 | Microsoft 070-316: Developing Windows Applications with C#</span></div>
+                                        <div class="skillbar-bar" style="width: 50%; background: #663795"></div>
+                                        <div class="skill-bar-percent">89%</div>
+                                    </div>
+                                    <!-- /Skill Bar -->
+                                </div>
+                            </p>
+                        </section>
+                    </div>
+                </div>
+                <!-- /Accordin -->
+            </div>
+        </div>
+        <!-- Star -->
+        <div class="star">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="star-divider">
+                            <div class="star-divider-icon">
+                                <i class=" fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Star -->
+        <div class="row">
+            <!-- Left Section -->
+            <div class="posts-block col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <!-- Recent work -->
+                <div class="recentwork_wrapper">
+                    <!-- Slider -->
+                    <div class="gallery-image">
+                        <div class="slider-wrapper theme-default">
+                            <div class="bx-wrapper" style="max-width: 100%;">
+                                <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 395px;">
+                                    <ul class="bxslider" style="width: 715%; position: relative; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-790px, 0px, 0px);">
+                                        <li style="float: left; list-style: none; position: relative; width: 750px;"><img src="@Href("~/Img/gallery/ZseniLeszek_01_1572x827.jpg")" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 750px;"><img src="@Href("~/Img/gallery/ZseniLeszek_02_1572x827.jpg")" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 750px;"><img src="@Href("~/Img/gallery/ZseniLeszek_03_1572x827.jpg")" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 750px;"><img src="@Href("~/Img/gallery/ZseniLeszek_04_1572x827.jpg")" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 750px;"><img src="@Href("~/Img/gallery/ZseniLeszek_05_1572x827.jpg")" alt=""></li>
+                                        <li style="float: left; list-style: none; position: relative; width: 750px;" class="bx-clone"><img src="@Href("~/Img/gallery/ZseniLeszek_01_1572x827.jpg")" alt=""></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="bx-pager">
+                                <a data-slide-index="0" href="" class="active"><img src="@Href("~/Img/gallery/thumbs/ZseniLeszek_01_150x150.jpg")" alt=""></a>
+                                <a data-slide-index="1" href=""><img src="@Href("~/Img/gallery/thumbs/ZseniLeszek_02_150x150.jpg")" alt=""></a>
+                                <a data-slide-index="2" href=""><img src="@Href("~/Img/gallery/thumbs/ZseniLeszek_03_150x150.jpg")" alt=""></a>
+                                <a data-slide-index="3" href=""><img src="@Href("~/Img/gallery/thumbs/ZseniLeszek_04_150x150.jpg")" alt=""></a>
+                                <a data-slide-index="4" href=""><img src="@Href("~/Img/gallery/thumbs/ZseniLeszek_05_150x150.jpg")" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- /Slider -->
+                    </div>
+                    <h3>Zseni Leszek - charity for education</h3>
+                    <div class="post-content top-pad">
+                        <p>
+                            Earning money and having a fulfilled life is important. But one of my life-long goals is to give back, and give back in a meaningful way. To express this intension, I started a project called Zseni Leszek (the name means 'I am going to be a genius').
+                        </p>
+                        <p>
+                            This education project is now in its second phase where we concentrate on children who are willing to improve their math knowledge at home. Our venture started as a Hungarian branch of the well-known Khan Academy, and now we are producing videos in a similar fashion to our US cousin for the Hungarian children. Just like Khan Academy, we started with math and we are planning to extend our library with other subjects. Our final goal is to cover all the material needed for the K-12 exams in Hungary, approved by state institutions.
+                        </p>
+                        <p>
+                            We are already having great progress: we created more than 1100 videos, approximately 85 hours of material; 4577 hours of our videos was watched by March, 2015 and the rate rises exponentially as we become more known. We are also collaborating with leaders in the field, who have the same goal as ours: to help children learn in the way they like, when they like it. Making the learning process more enjoyable and more efficient is the way we image education in the future.
+                        </p>
+                        <p>
+                            All the videos are free to watch, download and distribute from our website (http://www.zsenileszek.hu). This project is entirely non-profit and funded by me. Hopefully it will become self-sustaining soon.
+                        </p>
+                    </div>
+                </div>
+                <!-- /Recent work -->
+            </div>
+            <!-- /Left Section -->
+            <!-- Project Summary -->
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 sidebar">
+                <div class="widget">
+                    <div class="member-social dark">
+                        <a class="youtube" href="#"><i class="fa fa-youtube"></i></a>
+                        <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                        <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- Project Details Start -->
+                <div class="widget project_details">
+                    <div class="details-content">
+                        <span><strong>Title</strong><em>Founder and Producer</em></span>
+                        <span><strong>Date</strong><em>2013 - 2015</em></span>
+                        <span><strong>Skills</strong><em><a href="#">Coordination</a><a href="#">Leadership</a><a href="#">Communication</a><a href="#">Networking</a><a href="#">Management</a></em></span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget">
+                    <a href="http://www.zsenileszek.hu" class="btn-normal btn-color"><i class="fa fa-hand-right icon-large"></i>  Visit Site</a>
+                </div>
+            </div>
+            <!-- /Project Summary -->
+        </div>
+        <!-- Star -->
+        <div class="star">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="star-divider">
+                            <div class="star-divider-icon">
+                                <i class=" fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Star -->
+        <div class="row">
+            <!-- Recent Work-->
+            <div class="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="portfolio-content">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="portfolio-title text-center">
+                                    <h3>Recent Projects</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-isotope portfolio-four-column">
+                                <div class="grid">
+                                    <!-- Item 1 -->
+                                    <figure class="effect-zoe portfolio-border item">
+                                        <a href="@Url.Action("About", "Home", new { @id = "ZseniLeszek" })" class="portfolio-item-link" data-rel="prettyPhoto"><img src="@Href("~/Img/portfolio/ZseniLeszek_600x442.jpg")" alt="img1"></a>
+                                        <figcaption>
+                                            <h2><span>Zseni</span> Leszek</h2>
+                                        </figcaption>
+                                    </figure>
+                                    <!-- /Item 1 -->
+                                    <!-- Item 2 -->
+                                    <figure class="effect-zoe portfolio-border item">
+                                        <a href="@Url.Action("About", "Home", new { @id = "555Lottery" })" class="portfolio-item-link" data-rel="prettyPhoto"><img src="@Href("~/Img/portfolio/555Lottery_600x442.jpg")" alt="img2"></a>
+                                        <figcaption>
+                                            <h2><span>555</span> Lottery</h2>
+                                        </figcaption>
+                                    </figure>
+                                    <!-- /Item 2 -->
+                                    <!-- Item 3 -->
+                                    <figure class="effect-zoe portfolio-border item">
+                                        <a href="@Url.Action("About", "Home", new { @id = "MrKupido" })" class="portfolio-item-link" data-rel="prettyPhoto"><img src="@Href("~/Img/portfolio/MrKupido_600x442.jpg")" alt="img3"></a>
+                                        <figcaption>
+                                            <h2><span>MR</span> Kupido</h2>
+                                        </figcaption>
+                                    </figure>
+                                    <!-- /Item 3 -->
+                                    <!-- Item 4 -->
+                                    <figure class="effect-zoe portfolio-border item">
+                                        <a href="@Url.Action("About", "Home", new { @id = "Consultancy" })" class="portfolio-item-link" data-rel="prettyPhoto"><img src="@Href("~/Img/portfolio/Consultancy_600x442.jpg")" alt="img4"></a>
+                                        <figcaption>
+                                            <h2><span>Professional</span> Consultancy</h2>
+                                        </figcaption>
+                                    </figure>
+                                    <!-- /Item 4 -->
+                                </div>
+                                <!-- /grid-->
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Recent Work -->
+        </div>
+    </div>
+</div>
+<!-- /Main Content -->

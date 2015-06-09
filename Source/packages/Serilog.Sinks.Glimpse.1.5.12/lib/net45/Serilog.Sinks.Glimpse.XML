@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Serilog.Sinks.Glimpse</name>
+    </assembly>
+    <members>
+        <member name="T:Serilog.LoggerConfigurationGlimpseExtensions">
+            <summary>
+            Adds the WithGlimpseSink() extension method to <see cref="T:Serilog.LoggerConfiguration"/>.
+            </summary>
+        </member>
+        <member name="M:Serilog.LoggerConfigurationGlimpseExtensions.Glimpse(Serilog.Configuration.LoggerSinkConfiguration,Serilog.Events.LogEventLevel,System.IFormatProvider)">
+            <summary>
+            Write log events to Glimpse
+            </summary>
+            <returns>Configuration object allowing method chaining.</returns>
+        </member>
+        <member name="T:Serilog.Sinks.Glimpse.GlimpsePropertyFormatter">
+            <summary>
+            Converts <see cref="T:Serilog.Events.LogEventProperty"/> values into simple scalars,
+            that render well in Glimpse.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Glimpse.GlimpsePropertyFormatter.Simplify(Serilog.Events.LogEventPropertyValue)">
+            <summary>
+            Simplify the object so as to make handling the serialized
+            representation easier.
+            </summary>
+            <param name="value">The value to simplify (possibly null).</param>
+            <returns>A simplified representation.</returns>
+        </member>
+    </members>
+</doc>

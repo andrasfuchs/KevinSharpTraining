@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+@section Scripts {
+    <script>
+        gapi.hangout.render('hangouts-placeholder', {
+            'render': 'createhangout',
+            'initial_apps': [{ 'app_id': '1039075554894', 'start_data': 'contactpage', 'app_type': 'LOCAL_APP' }],
+            'widget_size': 72
+        });
+    </script>
+}
+
+<div class="breadcrumb-wrapper">
+    <div class="pattern-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <h2 class="title">@ViewBag.Title</h2>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <div class="breadcrumbs pull-right">
+                        <ul>
+                            <li>You are now on:</li>
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Content -->
+<div class="content margin-top60 margin-bottom60">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="contact-form">
+                <h2>Send Me an Email</h2>
+                <p>
+                    Feel free to contact me with the form below, via <a href="mailto:info@kevinsharp.net">e-mail</a> or on Google Hangouts. <span id="hangouts-placeholder"></span>
+                </p>
+                <form method="post" class="reply" id="contact">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Name" value="" required="" style="cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=);">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Email" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control" id="subject" name="subject" type="text" placeholder="Subject" value="" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <textarea class="form-control" id="text" name="text" rows="3" cols="40" placeholder="Message" required=""></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <button class="btn btn-color submit pull-right" type="submit">Send</button>
+                    <div class="success alert-success alert" style="display:none">Your message has been sent successfully.</div>
+                    <div class="error alert-error alert" style="display:none">E-mail must be valid and message must be longer than 100 characters.</div>
+                    <div class="clearfix">
+                    </div>
+                </form>
+            </div>
+            <!-- /Contact Form -->
+            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-6">
+                <div class="address widget">
+                    <h3 class="title">Head Office</h3>
+                    <ul class="contact-us">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <p>
+                                <strong class="contact-pad">Address:</strong>
+                                2220 Meridian Blvd<br />
+                                Unit #4731 <br />
+                                Minden, NV 89423<br />
+                                United States<br />
+                            </p>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <p><strong>Phone:</strong> +1 863-225-3846</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <p><strong>E-mail:</strong><a href="mailto:info@kevinsharp.net">info@kevinsharp.net</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-info widget">
+                    <h3 class="title">Business Hours</h3>
+                    <ul class="business-hour">
+                        <li><i class="fa fa-clock-o"> </i><span class="days">Monday - Friday</span>9am to 3pm </li>
+                        <li><i class="fa fa-clock-o"> </i><span class="days">Saturday</span>9am to 12pm</li>
+                        <li><i class="fa fa-times-circle-o"> </i><span class="days">Sunday</span>closed</li>
+                    </ul>
+                </div>
+                <div class="follow widget">
+                    <h3 class="title">Follow Me</h3>
+                    <div class="member-social dark">
+                        <a class="googleplus" href="https://plus.google.com/108707907055929830332"><i class="fa fa-google-plus"></i></a>
+                        <a class="youtube" href="https://www.youtube.com/channel/UCAAWCWrFGRSBzoI9X-BlESQ"><i class="fa fa-youtube"></i></a>
+                        <a class="linkedin" href="https://www.linkedin.com/in/andrasfuchs"><i class="fa fa-linkedin"></i></a>
+                        <a class="twitter" href="https://twitter.com/andrasfuchs"><i class="fa fa-twitter"></i></a>
+                        <a class="stackoverflow" href="http://stackoverflow.com/users/980247/andras"><i class="fa fa-stack-overflow"></i></a>
+                        <a class="rss" href="#"><i class="fa fa-rss"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Main Content -->
