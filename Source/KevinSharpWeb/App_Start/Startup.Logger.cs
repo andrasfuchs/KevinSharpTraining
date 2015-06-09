@@ -3,7 +3,7 @@ using Microsoft.Owin;
 using Owin;
 using Serilog;
 
-namespace KevinSharpWeb
+namespace KevinSharp.Web
 {
     public partial class Startup
     {

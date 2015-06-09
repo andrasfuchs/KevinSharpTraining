@@ -6,18 +6,18 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace KevinSharpWeb
+namespace KevinSharp.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            Serilog.Log.Logger.Information("Kevin Sharp application started");
-
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Serilog.Log.Logger.Information("Kevin Sharp application started");
         }
 
         protected void Application_End()

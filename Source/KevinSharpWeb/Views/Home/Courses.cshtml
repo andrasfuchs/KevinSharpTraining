@@ -2,6 +2,14 @@
     ViewBag.Title = "Courses";
 }
 
+@section Scripts {
+    <script type="text/javascript">
+        var urlGetCourseTimeSlots = '@Url.Action("GetCourseTimeSlots", "Home")';
+    </script>
+
+    <script type="text/javascript" src="@Url.Content("/Scripts/Views/Home/Courses.js")"></script>
+}
+
 <div class="breadcrumb-wrapper">
     <div class="pattern-overlay">
         <div class="container">
@@ -171,44 +179,50 @@
                                         <tbody>
                                             <tr>
                                                 <td>Kevin Sharp training session (3.5 hours)</td>
-                                                <td>$245.00</td>
+                                                <td>$245</td>
                                                 <td>2</td>
-                                                <td>$490.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Payment Processor fee</td>
-                                                <td>$1.50</td>
-                                                <td>1</td>
-                                                <td>$1.50</td>
+                                                <td>$490</td>
                                             </tr>
                                             <tr>
                                                 <td>First-timer discount</td>
                                                 <td>$150</td>
                                                 <td>1</td>
-                                                <td>$150</td>
+                                                <td>-$150</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Beta course discount</td>
+                                                <td>$340</td>
+                                                <td>1</td>
+                                                <td>-$340</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="3">Total</td>
-                                                <td>$341.50</td>
+                                                <td id="paymenttotal">$0</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <form>
                                     <h3 class="title">Payment method</h3>
-                                    <div>
-                                        <label class="radio"><input type="radio" name="register"> Credit or debit card</label>
-                                        <label class="radio optiondisabled"><input type="radio" name="register"> Google Wallet</label>
-                                        <label class="radio optiondisabled"><input type="radio" name="register"> Bitcoin</label>
+                                    <div id="paymentmethods">
+                                        <label class="radio optiondisabled"><input type="radio" name="paymentmethod" value="CreditCard" /> Credit or debit card</label>
+                                        <label class="radio optiondisabled"><input type="radio" name="paymentmethod" value="GoogleWallet" /> Google Wallet</label>
+                                        <label class="radio optiondisabled"><input type="radio" name="paymentmethod" value="Bitcoin" /> Bitcoin</label>
                                     </div>
                                 </form>
                                 <div class="buttons-box text-right">
-                                    <button type="button" class="btn btn-color">Continue</button>
+                                    <button type="button" class="btn btn-color" id="paymentcontinue">Continue</button>
                                 </div>
                             </div>
                         </div>
                     </li>
                     <!-- /Panel 4 -->
+                    <li>
+                        <div id="thankyou" class="alert alert-success" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            Thank you and see you soon on the course! You will get a confirmation e-mail in 24 hours.
+                        </div>
+                    </li>
                     <!-- Panel 5 -->
                     <li class="panel optiondisabled" id="reminderspanel">
                         <a href="#step-5" class="collapsed step-title" data-parent="#checkoutsteps" data-toggle="collapse">
@@ -217,12 +231,12 @@
                         </a>
                         <div id="step-5" class="collapse">
                             <div class="step-content">
-                                <div>
-                                    <label class="checkbox"><input type="checkbox" name="register"> Create an event in my Google Calendar</label>
-                                    <label class="checkbox"><input type="checkbox" name="register"> Send me an e-mail reminder 24 hours before the class</label>
-                                    <label class="checkbox"><input type="checkbox" name="register"> Send me a Google Hangouts message 1 hour before the class</label>
+                                <div id="reminders">
+                                    <label class="checkbox"><input type="checkbox" name="reminders" value="calendar"> Create an event in my Google Calendar</label>
+                                    <label class="checkbox"><input type="checkbox" name="reminders" value="email"> Send me an e-mail reminder 24 hours before the class</label>
+                                    <label class="checkbox"><input type="checkbox" name="reminders" value="chat"> Send me a Google Hangouts message 1 hour before the class</label>
                                 </div>
-                                <button type="button" class="btn btn-color">Save settings</button>
+                                <button type="button" class="btn btn-color" id="reminderscontinue">Save settings</button>
                             </div>
                         </div>
                     </li>
@@ -273,8 +287,3 @@
     </div>
 </div>
 <!-- /Main Content -->
-@section Scripts {
-    <script type="text/javascript" src="@Url.Content("/Scripts/Views/Home/Courses.js")"></script>
-}
-
-

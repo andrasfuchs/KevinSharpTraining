@@ -16,7 +16,7 @@
                         <span class="headertop">GET UPDATES</span>
                         <input type="text" value="your e-mail" onfocus="if (this.value == 'your e-mail') this.value = '';" onblur="    if (this.value == '') this.value = 'your e-mail';" class="subscribe form-control headertop">
                         <span class="input-group-btn">
-                            <button class="btn subscribe-btn headertop" type="button">Subscribe</button>
+                            <button class="btn subscribe-btn headertop" type="button" id="newslettersubscribetopbar">Subscribe</button>
                         </span>
                     </div>
                     <!-- /input-group -->
@@ -26,10 +26,10 @@
                 <i class="fa fa-phone"></i> Call me: <a href="tel:+1 863-225-3846">+1 863-225-3846</a>
                 @if (Request.IsAuthenticated)
                 {
-                    using (Html.BeginForm("LogOff", "Account", new { Provider = "Google" }, FormMethod.Post, new { id = "logoutform" }))
+                    using (Html.BeginForm("LogOff", "Account", new { ReturnUrl = Request.Url, Provider = "Google" }, FormMethod.Post, new { id = "logoutform" }))
                     {
                         @Html.AntiForgeryToken()
-                        <a href="#" onclick="logoutform.submit();" id="loginlink"><i class="fa fa-sign-out"></i> Logout</a>
+                        <a href="#" onclick="logoutform.submit();" id="logoutlink"><i class="fa fa-sign-out"></i> Logout</a>
                     }
                 }
                 else

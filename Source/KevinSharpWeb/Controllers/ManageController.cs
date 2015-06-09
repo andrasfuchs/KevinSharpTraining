@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using KevinSharpWeb.Models;
+using KevinSharp.Web.Models;
 
-namespace KevinSharpWeb.Controllers
+namespace KevinSharp.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller

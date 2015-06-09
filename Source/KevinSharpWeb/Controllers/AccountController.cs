@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using KevinSharpWeb.Models;
+using KevinSharp.Web.Models;
 
-namespace KevinSharpWeb.Controllers
+namespace KevinSharp.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -57,7 +57,7 @@ namespace KevinSharpWeb.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl = returnUrl ?? "\\Home\\Index";
             return View();
         }
 
@@ -325,7 +325,8 @@ namespace KevinSharpWeb.Controllers
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
-                return RedirectToAction("Login");
+                //return RedirectToAction("Login");
+                return RedirectToLocal(returnUrl);
             }
 
             // Sign in the user with this external login provider if the user already has a login
@@ -399,10 +400,12 @@ namespace KevinSharpWeb.Controllers
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        public ActionResult LogOff(string returnUrl)
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+
+            return RedirectToLocal(returnUrl);
+            //return RedirectToAction("Index", "Home");
         }
 
         //
@@ -455,6 +458,8 @@ namespace KevinSharpWeb.Controllers
 
         private ActionResult RedirectToLocal(string returnUrl)
         {
+            returnUrl = returnUrl.Replace("http://" + Request.Url.Authority, "~").Replace("https://" + Request.Url.Authority, "~");
+
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);

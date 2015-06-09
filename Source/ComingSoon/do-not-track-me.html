@@ -7,17 +7,19 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-61324346-1', 'auto');
+	  ga('create', 'UA-63931838-1', 'auto');
 	  ga('require', 'linkid', 'linkid.js');
 	  ga('send', 'pageview');
 	</script>
 </head>
 <body onLoad="javascript: ga('set', 'dimension1', 'ExcludeMe');">
-Done!<br/>
+Done! 'UA-63931838-1' Universal Analytics custom dimension 'dimension1' was set to 'ExcludeMe'. <br/>
 <br/>
-1, You should set up the Dimension here: https://support.google.com/analytics/answer/2709829?hl=en&topic=2709827&ctx=topic <br/>
-2, Read about setting the dimension value here: https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets <br/>
-3, Set the exclude filter here: https://support.google.com/analytics/answer/1033162?hl=en <br/>
+1, You should set up the dimension here: <a href="https://support.google.com/analytics/answer/2709829?hl=en&topic=2709827&ctx=topic">https://support.google.com/analytics/answer/2709829?hl=en&topic=2709827&ctx=topic</a> <br/>
+(Select property, Custom Definitions, Custom Dimensions, +New Custom Dimension, NAME: ExcludeMe, SCOPE: User, ACTIVE: true)<br/>
+2, Read about setting the dimension value here: <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets">https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets</a> <br/>
+3, Set the exclude filter here: <a href="https://support.google.com/analytics/answer/1033162?hl=en">https://support.google.com/analytics/answer/1033162?hl=en</a> <br/>
+(Select view, Filters, +New Filter, NAME: Exclude Developer Traffic, TYPE: Custom, Exclude, Field: ExcludeMe, Pattern: ExcludeMe)<br/>
 <br/>
 </body>
 </html>

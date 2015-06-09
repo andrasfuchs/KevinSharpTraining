@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KevinSharpWeb", "KevinSharpWeb\KevinSharpWeb.csproj", "{FE50337B-D2B7-478C-9177-50A4C78C809B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KevinSharp.Web", "KevinSharpWeb\KevinSharp.Web.csproj", "{FE50337B-D2B7-478C-9177-50A4C78C809B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KevinSharp.DataModel", "KevinSharpDataModel\KevinSharp.DataModel.csproj", "{CF17C251-EED4-473D-AF2C-0B84D8B1741F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FE50337B-D2B7-478C-9177-50A4C78C809B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE50337B-D2B7-478C-9177-50A4C78C809B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE50337B-D2B7-478C-9177-50A4C78C809B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF17C251-EED4-473D-AF2C-0B84D8B1741F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF17C251-EED4-473D-AF2C-0B84D8B1741F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF17C251-EED4-473D-AF2C-0B84D8B1741F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF17C251-EED4-473D-AF2C-0B84D8B1741F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

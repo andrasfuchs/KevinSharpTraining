@@ -16,6 +16,8 @@
 
             $("#loginwarninglink").on("click", function () {
                 $("#loginlink").trigger("click");
+
+                ga('send', 'event', 'user', 'login', 'coursewarninglink');
             });
 
             // edit buttons
@@ -58,8 +60,25 @@
             $("#csfundamentals").on("click", function () {
                 $("#progresscourse>label").text("C# Fundamentals");
 
+                function getCourseTimeSlots(courseCode) {
+                    var dynamicData = {};
+                    dynamicData["courseCode"] = courseCode;
+                    return $.ajax({
+                        url: urlGetCourseTimeSlots,
+                        type: "POST",
+                        dataType: 'json',
+                        data: dynamicData
+                    })
+                }
+
+                getCourseTimeSlots("CS02").done(function (data) {
+                    $("#progresscourse>label").text(data);
+                })
+
                 $("#schedulepanel").removeClass("optiondisabled");
                 $("#progressschedule>a").trigger("click");
+
+                ga('send', 'event', 'courses', 'courseselected', 'cs02', 2);
             });
 
             // schedule clicks
@@ -71,6 +90,8 @@
 
                 $("#billingpanel").removeClass("optiondisabled");
                 $("#progressbilling>a").trigger("click");
+
+                ga('send', 'event', 'courses', 'dateselected', this.value);
             });
 
             // billing continue
@@ -83,6 +104,32 @@
 
                 $("#paymentpanel").removeClass("optiondisabled");
                 $("#progresspayment>a").trigger("click");
+
+                ga('send', 'event', 'courses', 'billingcontinue');
+            });
+
+
+            // payment
+            $("#paymentmethods input").on("change", function () {
+                $("#progresspayment>label").text(this.value);
+
+                ga('send', 'event', 'courses', 'paymentmethod', this.value);
+            });
+
+            $("#paymentcontinue").on("click", function () {
+                $("#reminderspanel").removeClass("optiondisabled");
+                $("#progressreminders>a").trigger("click");
+
+                $("#thankyou").show();
+
+                ga('send', 'event', 'courses', 'paymentcontinue', $("#paymenttotal")[0].innerText);
+            });
+
+            // reminders
+            $("#reminderscontinue").on("click", function () {
+                $("#progressreminders>a").trigger("click");
+
+                ga('send', 'event', 'courses', 'reminderscontinue');
             });
         });
 

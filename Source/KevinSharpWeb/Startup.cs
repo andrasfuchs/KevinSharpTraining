@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(KevinSharpWeb.Startup))]
-namespace KevinSharpWeb
+[assembly: OwinStartupAttribute(typeof(KevinSharp.Web.Startup))]
+namespace KevinSharp.Web
 {
     public partial class Startup
     {

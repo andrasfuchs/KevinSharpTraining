@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using KevinSharpWeb.Models;
+using KevinSharp.Web.Models;
 
-namespace KevinSharpWeb
+namespace KevinSharp.Web
 {
     public partial class Startup
     {
@@ -15,7 +15,7 @@ namespace KevinSharpWeb
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(AuthDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
@@ -58,11 +58,26 @@ namespace KevinSharpWeb
             //   appId: "",
             //   appSecret: "");
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            GoogleOAuth2AuthenticationOptions googleAuthOptions = new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "1039075554894-qettookc97g0ojos9iiv06q1nuqodn50.apps.googleusercontent.com",
                 ClientSecret = "SgqwgOqaDIGgEDFuQM9zF_zL"
-            });
+            };
+
+            googleAuthOptions.Scope.Add("profile");
+            // instead of "profile" scope
+            //googleAuthOptions.Scope.Add("https://www.googleapis.com/auth/plus.login");
+
+            googleAuthOptions.Scope.Add("email");
+            // instead of "email" scope
+            //googleAuthOptions.Scope.Add("https://www.googleapis.com/auth/plus.profile.emails.read");
+
+            // we do not need the "openid" scope
+            // googleAuthOptions.Scope.Add("https://www.googleapis.com/auth/plus.me");
+
+            googleAuthOptions.Scope.Add("https://www.googleapis.com/auth/calendar");
+
+            app.UseGoogleAuthentication(googleAuthOptions);
         }
     }
 }
