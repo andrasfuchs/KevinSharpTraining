@@ -12,12 +12,13 @@
         // Listen for the jQuery ready event on the document
         $(function () {
             // The DOM is ready!
-
+            var selectedCourseCode = "";
+            var selectedTimeSlotGroupCode = "";
 
             $("#loginwarninglink").on("click", function () {
                 $("#loginlink").trigger("click");
 
-                ga('send', 'event', 'user', 'login', 'coursewarninglink');
+                addSessionEvent('user', 'login', 'coursewarninglink');
             });
 
             // edit buttons
@@ -57,8 +58,9 @@
             });
 
             // course clicks
-            $("#csfundamentals").on("click", function () {
-                $("#progresscourse>label").text("C# Fundamentals");
+            $("#csfundamentals").on("click", function (e) {
+                selectedCourseCode = e.target.attributes["data-coursecode"].value;
+                $("#progresscourse>label").text(e.target.attributes["data-coursename"].value);
 
                 function getCourseTimeSlots(courseCode) {
                     var dynamicData = {};
@@ -71,27 +73,47 @@
                     })
                 }
 
-                getCourseTimeSlots("CS02").done(function (data) {
-                    $("#progresscourse>label").text(data);
+                getCourseTimeSlots(selectedCourseCode).done(function (data) {
+                    var efficient = data[0];
+                    var intense = data[1];
+
+                    $('#efficientdates').empty();
+                    $('#efficientdates').append($("<option></option>").attr("value", "N/A").text("Select your prefered date"));
+                    $.each(efficient, function (key, value) {
+                        $('#efficientdates')
+                            .append($("<option></option>")
+                            .attr("value", value[0])
+                            .text(value[1]));
+                    });
+
+                    $('#intensedates').empty();
+                    $('#intensedates').append($("<option></option>").attr("value", "N/A").text("Select your prefered date"));
+                    $.each(intense, function (key, value) {
+                        $('#intensedates')
+                            .append($("<option></option>")
+                            .attr("value", value[0])
+                            .text(value[1]));
+                    });
                 })
 
                 $("#schedulepanel").removeClass("optiondisabled");
                 $("#progressschedule>a").trigger("click");
 
-                ga('send', 'event', 'courses', 'courseselected', 'cs02', 2);
+                addSessionEvent('courses', 'courseselected', selectedCourseCode, 2);
             });
 
             // schedule clicks
             $("div.dateselection>select").on("change", function (e) {
                 var optionSelected = $("option:selected", this);
                 var valueSelected = this.value;
+                selectedTimeSlotGroupCode = valueSelected;
 
                 $("#progressschedule>label").text(valueSelected);
 
                 $("#billingpanel").removeClass("optiondisabled");
                 $("#progressbilling>a").trigger("click");
 
-                ga('send', 'event', 'courses', 'dateselected', this.value);
+                addSessionEvent('courses', 'dateselected', this.value);
             });
 
             // billing continue
@@ -105,7 +127,7 @@
                 $("#paymentpanel").removeClass("optiondisabled");
                 $("#progresspayment>a").trigger("click");
 
-                ga('send', 'event', 'courses', 'billingcontinue');
+                addSessionEvent('courses', 'billingcontinue');
             });
 
 
@@ -113,7 +135,7 @@
             $("#paymentmethods input").on("change", function () {
                 $("#progresspayment>label").text(this.value);
 
-                ga('send', 'event', 'courses', 'paymentmethod', this.value);
+                addSessionEvent('courses', 'paymentmethod', this.value);
             });
 
             $("#paymentcontinue").on("click", function () {
@@ -122,17 +144,48 @@
 
                 $("#thankyou").show();
 
-                ga('send', 'event', 'courses', 'paymentcontinue', $("#paymenttotal")[0].innerText);
+                function orderCompleted(courseCode, timeSlotGroupCode) {
+                    var dynamicData = {};
+                    dynamicData["courseCode"] = selectedCourseCode,
+                    dynamicData["timeSlotGroupCode"] = timeSlotGroupCode;
+                    return $.ajax({
+                        url: urlOrderCompleted,
+                        type: "POST",
+                        dataType: 'json',
+                        data: dynamicData
+                    })
+                }
+
+                orderCompleted(selectedCourseCode, selectedTimeSlotGroupCode);
+
+                addSessionEvent('courses', 'paymentcontinue', $("#paymenttotal")[0].innerText);
             });
 
             // reminders
             $("#reminderscontinue").on("click", function () {
                 $("#progressreminders>a").trigger("click");
 
-                ga('send', 'event', 'courses', 'reminderscontinue');
+                addSessionEvent('courses', 'reminderscontinue');
             });
         });
 
         // The DOM may not be ready
     })
 );
+
+
+function addSessionEvent(category, action, label, value) {
+    ga('send', 'event', category, action, label, value);
+
+    var dynamicData = {};
+    dynamicData["category"] = category,
+    dynamicData["action"] = action,
+    dynamicData["label"] = label,
+    dynamicData["value"] = value;
+    return $.ajax({
+        url: urlAddSessionEvent,
+        type: "POST",
+        dataType: 'json',
+        data: dynamicData
+    })
+};

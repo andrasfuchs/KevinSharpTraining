@@ -334,13 +334,18 @@ namespace KevinSharp.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    Session["UserEmail"] = loginInfo.Email;                    
+                    AddSessionEvent("user", "login", "success");
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
+                    AddSessionEvent("user", "login", "lockout");
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
+                    AddSessionEvent("user", "login", "requiresverification");
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
                 case SignInStatus.Failure:
                 default:
+                    AddSessionEvent("user", "login", "failure");
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
@@ -364,8 +369,8 @@ namespace KevinSharp.Web.Controllers
             if (ModelState.IsValid)
             {
                 // Get the information about the user from the external login provider
-                var info = await AuthenticationManager.GetExternalLoginInfoAsync();
-                if (info == null)
+                var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
+                if (loginInfo == null)
                 {
                     return View("ExternalLoginFailure");
                 }
@@ -373,19 +378,21 @@ namespace KevinSharp.Web.Controllers
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
-                    result = await UserManager.AddLoginAsync(user.Id, info.Login);
+                    result = await UserManager.AddLoginAsync(user.Id, loginInfo.Login);
                     if (result.Succeeded)
                     {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // add claims
-                        await UserManager.AddClaimAsync(user.Id, new Claim("registrationtimeutc", DateTime.UtcNow.ToString("o"), "http://www.w3.org/2001/XMLSchema#string", "KevinSharp", "KevinSharp", info.ExternalIdentity));
+                        await UserManager.AddClaimAsync(user.Id, new Claim("registrationtimeutc", DateTime.UtcNow.ToString("o"), "http://www.w3.org/2001/XMLSchema#string", "KevinSharp", "KevinSharp", loginInfo.ExternalIdentity));
 
-                        foreach (var claim in info.ExternalIdentity.Claims)
+                        foreach (var claim in loginInfo.ExternalIdentity.Claims)
                         {
                             await UserManager.AddClaimAsync(user.Id, new Claim(claim.Type.Replace("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/", ""), claim.Value, claim.ValueType, claim.Issuer, claim.OriginalIssuer, claim.Subject));
                         }
 
+                        Session["UserEmail"] = loginInfo.Email;
+                        AddSessionEvent("user", "login", "newuser");
                         return RedirectToLocal(returnUrl);
                     }
                 }
@@ -404,6 +411,8 @@ namespace KevinSharp.Web.Controllers
         {
             AuthenticationManager.SignOut();
 
+            AddSessionEvent("user", "logout");
+            Session["UserEmail"] = "";
             return RedirectToLocal(returnUrl);
             //return RedirectToAction("Index", "Home");
         }
@@ -413,6 +422,7 @@ namespace KevinSharp.Web.Controllers
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {
+            AddSessionEvent("user", "login", "failure");
             return View();
         }
 
@@ -496,5 +506,10 @@ namespace KevinSharp.Web.Controllers
             }
         }
         #endregion
+
+        public void AddSessionEvent(string category, string action, string label = "", int value = 0)
+        {
+            MvcApplication.AddSessionEvent(Session, category, action, label, value);
+        }
     }
 }

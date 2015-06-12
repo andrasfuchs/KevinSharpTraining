@@ -5,6 +5,8 @@
 @section Scripts {
     <script type="text/javascript">
         var urlGetCourseTimeSlots = '@Url.Action("GetCourseTimeSlots", "Home")';
+        var urlOrderCompleted = '@Url.Action("OrderCompleted", "Home")';
+        var urlAddSessionEvent = '@Url.Action("AddSessionEvent", "Home")';
     </script>
 
     <script type="text/javascript" src="@Url.Content("/Scripts/Views/Home/Courses.js")"></script>
@@ -60,7 +62,9 @@
                                 <div class="row courses">
                                     <div class="col-sm-12 col-md-12 bottom-padding-mobile">
                                         <h3 class="title optiondisabled"><span class="coursecode beginner">C#01</span>Getting started with .NET and Visual Studio 2013 (coming in June)<span class="duration">2x 3.5 hours</span></h3>
-                                        <h3 class="title" id="csfundamentals"><span class="coursecode beginner">C#02</span>C# 5.0 Fundamentals<span class="duration">2x 3.5 hours</span></h3>
+                                        <h3 class="title" id="csfundamentals" data-coursecode="CS02" data-coursename="C# 5.0 Fundamentals">
+                                            <span class="coursecode beginner">C#02</span>C# 5.0 Fundamentals<span class="duration">2x 3.5 hours</span>
+                                        </h3>
                                         <h4>Modules</h4>
                                         <ul>
                                             <li>Introduction to C#<span class="duration">1 hour</span></li>
@@ -96,22 +100,16 @@
                                     <h3 class="title">Option A: Efficient</h3>
                                     <h5>Split the course into 3.5-hour-long classes, to maximize learning by keeping a few days break between sections</h5>
                                     <div class="dateselection">
-                                        <select class="form-control">
+                                        <select class="form-control" id="efficientdates">
                                             <option>Select your prefered date</option>
-                                            <option value="2015-05-12, 2015-05-15">2015-05-12 Tuesday, 15:00 - 18:30 (CET) and 2015-05-15 Friday, 15:00 - 18:30 (CET)</option>
-                                            <option value="2015-05-19, 2015-05-22">2015-05-19 Tuesday, 15:00 - 18:30 (CET) and 2015-05-22 Friday, 15:00 - 18:30 (CET)</optionvalue>
-                                            <option value="2015-05-26, 2015-05-29">2015-05-26 Tuesday, 15:00 - 18:30 (CET) and 2015-05-29 Friday, 15:00 - 18:30 (CET)</option>
                                         </select>
                                     </div>
 
                                     <h3 class="title">Option B: Intensive</h3>
                                     <h5>Take 7-hour-long classes to minimize the days needed to complete the course</h5>
                                     <div class="dateselection">
-                                        <select class="form-control">
+                                        <select class="form-control" id="intensedates">
                                             <option>Select your prefered date</option>
-                                            <option value="2015-05-13">2015-05-13 Wednesday, 11:00 - 18:30 (CET)</option>
-                                            <option value="2015-05-20">2015-05-20 Wednesday, 11:00 - 18:30 (CET)</option>
-                                            <option value="2015-05-27">2015-05-27 Wednesday, 11:00 - 18:30 (CET)</option>
                                         </select>
                                     </div>
                                 </form>

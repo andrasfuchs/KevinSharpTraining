@@ -64,7 +64,17 @@
     <Compile Include="Migrations\201506091108494_TimeSlotAndGroupDbSet.Designer.cs">
       <DependentUpon>201506091108494_TimeSlotAndGroupDbSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506111359213_RenamedTimeSlotGroups.cs" />
+    <Compile Include="Migrations\201506111359213_RenamedTimeSlotGroups.Designer.cs">
+      <DependentUpon>201506111359213_RenamedTimeSlotGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506121055251_SessionLogAndApplicants.cs" />
+    <Compile Include="Migrations\201506121055251_SessionLogAndApplicants.Designer.cs">
+      <DependentUpon>201506121055251_SessionLogAndApplicants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\SessionLog.cs" />
+    <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\TimeSlot.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="KevinSharpDbContext.cs" />
@@ -81,6 +91,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506091108494_TimeSlotAndGroupDbSet.resx">
       <DependentUpon>201506091108494_TimeSlotAndGroupDbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506111359213_RenamedTimeSlotGroups.resx">
+      <DependentUpon>201506111359213_RenamedTimeSlotGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506121055251_SessionLogAndApplicants.resx">
+      <DependentUpon>201506121055251_SessionLogAndApplicants.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

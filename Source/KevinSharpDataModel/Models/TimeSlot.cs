@@ -23,15 +23,15 @@ namespace KevinSharp.DataModel
             return this.ToString("Central European Standard Time");
         }
 
-        public string ToString(string timeZoneId = "Pacific Standard Time")
+        public string ToString(string timeZoneId = "Pacific Standard Time", bool appendTimeZone = true)
         {
             string dateFormat = "yyyy-MM-dd, dddd";
             string timeFormat = "HH:mm";
             TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
             DateTime convertedStartTime = TimeZoneInfo.ConvertTimeFromUtc(StartTimeUtc, tzi);
-            DateTime convertedEndTime = convertedStartTime + new TimeSpan(Duration);
+            DateTime convertedEndTime = convertedStartTime + new TimeSpan(0, Duration, 0);
             
-            return convertedStartTime.ToString(dateFormat) + " " + convertedStartTime.ToString(timeFormat) + " - " + convertedEndTime.ToString(timeFormat) + " (" + tzi.DisplayName + ")";
+            return convertedStartTime.ToString(dateFormat) + " " + convertedStartTime.ToString(timeFormat) + " - " + convertedEndTime.ToString(timeFormat) + (appendTimeZone ? " (UTC" + tzi.BaseUtcOffset.Hours.ToString("0") + ")" : "");
         }
 
         public string ToDateString(string timeZoneId = "Pacific Standard Time")

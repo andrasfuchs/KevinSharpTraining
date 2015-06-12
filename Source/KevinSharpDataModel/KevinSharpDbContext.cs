@@ -14,6 +14,10 @@ namespace KevinSharp.DataModel
 
         public DbSet<TimeSlot> TimeSlots { get; set; }
 
+        public DbSet<Applicant> Applicants { get; set; }
+
+        public DbSet<SessionLog> SessionLogs { get; set; }
+
         public KevinSharpDbContext() : this("Name=KevinSharpDBConnection") { }
 
         public KevinSharpDbContext(string connectionStringId) : base(connectionStringId) 

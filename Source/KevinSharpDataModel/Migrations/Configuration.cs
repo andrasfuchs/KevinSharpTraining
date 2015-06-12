@@ -37,7 +37,7 @@ namespace KevinSharp.DataModel.Migrations
                 Level = CourseLevel.Beginner,
                 Description = "C# 5.0 Fundamentals Course",
                 Modules = new string[0],
-                TimeSlots = new List<TimeSlotGroup>()
+                TimeSlotGroups = new List<TimeSlotGroup>()
             };
 
             context.Courses.AddOrUpdate(
@@ -51,7 +51,7 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Beginner,
                     Description = "You are going to learn the ins and outs of Visual Studio 2013",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 },
 
                 courseCS02,
@@ -65,7 +65,7 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Beginner,
                     Description = "You are going to learn the ins and outs of ASP.NET",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 },
                 new Course
                 {
@@ -76,7 +76,7 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Beginner,
                     Description = "You are going to learn the ins and outs of ASP.NET MVC",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 },
                 new Course
                 {
@@ -87,7 +87,7 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Intermediate,
                     Description = "You are going to learn the ins and outs of Generics, LINQ and Reflection with C#",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 },
                 new Course
                 {
@@ -98,7 +98,7 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Intermediate,
                     Description = "You are going to learn the ins and outs of WCF",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 },
                 new Course
                 {
@@ -109,7 +109,7 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Intermediate,
                     Description = "You are going to learn the ins and outs of Entity Framework",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 },
                 new Course
                 {
@@ -120,36 +120,24 @@ namespace KevinSharp.DataModel.Migrations
                     Level = CourseLevel.Intermediate,
                     Description = "You are going to learn the ins and outs of HTML, jQuery and Bootstrap",
                     Modules = new string[0],
-                    TimeSlots = new List<TimeSlotGroup>()
+                    TimeSlotGroups = new List<TimeSlotGroup>()
                 }
             );
 
-            TimeSlotGroup tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 12, 14, 00, 00, DateTimeKind.Utc), Duration = 210 });
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 15, 14, 00, 00, DateTimeKind.Utc), Duration = 210 });
-            context.TimeSlotGroups.AddOrUpdate(tsgCS02);
 
-            tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 19, 14, 00, 00, DateTimeKind.Utc), Duration = 210 });
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 22, 14, 00, 00, DateTimeKind.Utc), Duration = 210 });
-            context.TimeSlotGroups.AddOrUpdate(tsgCS02);
+            for (int i = 0; i < 30; i++)
+            {
+                TimeSlotGroup tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
+                tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 12, 14, 00, 00, DateTimeKind.Utc).AddDays(i * 7), Duration = 210 });
+                tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 15, 14, 00, 00, DateTimeKind.Utc).AddDays(i * 7), Duration = 210 });
+                tsgCS02.GenerateNewCode();
+                context.TimeSlotGroups.AddOrUpdate(tsg => tsg.Code, tsgCS02);
 
-            tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 26, 14, 00, 00, DateTimeKind.Utc), Duration = 210 });
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 29, 14, 00, 00, DateTimeKind.Utc), Duration = 210 });
-            context.TimeSlotGroups.AddOrUpdate(tsgCS02);
-
-            tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 13, 10, 00, 00, DateTimeKind.Utc), Duration = 420 });
-            context.TimeSlotGroups.AddOrUpdate(tsgCS02);
-
-            tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 20, 10, 00, 00, DateTimeKind.Utc), Duration = 420 });
-            context.TimeSlotGroups.AddOrUpdate(tsgCS02);
-
-            tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
-            tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 27, 10, 00, 00, DateTimeKind.Utc), Duration = 420 });
-            context.TimeSlotGroups.AddOrUpdate(tsgCS02);
+                tsgCS02 = new TimeSlotGroup() { Course = courseCS02, TimeSlots = new List<TimeSlot>() };
+                tsgCS02.TimeSlots.Add(new TimeSlot() { StartTimeUtc = new DateTime(2015, 05, 13, 10, 00, 00, DateTimeKind.Utc).AddDays(i * 7), Duration = 420 });
+                tsgCS02.GenerateNewCode();
+                context.TimeSlotGroups.AddOrUpdate(tsg => tsg.Code, tsgCS02);
+            }
         }
     }
 }

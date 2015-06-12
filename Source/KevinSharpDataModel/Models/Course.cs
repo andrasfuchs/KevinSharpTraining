@@ -40,7 +40,7 @@ namespace KevinSharp.DataModel
 
         [Required]
         [Column(Order = 9)]
-        public virtual ICollection<TimeSlotGroup> TimeSlots { get; set; }
+        public virtual ICollection<TimeSlotGroup> TimeSlotGroups { get; set; }
     }
 
     public enum CourseLevel { Beginner, Intermediate, Expert }
