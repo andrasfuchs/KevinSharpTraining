@@ -1,6 +1,7 @@
 ﻿using KevinSharp.DataModel;
 using Mandrill;
 using Mandrill.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,21 @@ namespace KevinSharp.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private KevinSharpDbContext dbContext = new KevinSharpDbContext();
+        private KevinSharpDbContext dbContext = null;
+        private static bool WasSeeded = false;
+
+        public HomeController()
+        {
+            dbContext = new KevinSharpDbContext();
+
+            if (!HomeController.WasSeeded)
+            {
+                Seeder.Seed(dbContext);
+                HomeController.WasSeeded = true;
+
+                Log.Logger.Information("DB seed method completed");
+            }
+        }
 
         public ActionResult Index()
         {
@@ -26,6 +41,13 @@ namespace KevinSharp.Web.Controllers
 
         public ActionResult Courses()
         {
+            //System.IO.File.WriteAllText(Server.MapPath("~/App_Data/writepermissiontest.txt"), "Write permission test passed!");
+
+            //foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/App_Data/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
+            //{
+            //    System.Diagnostics.Debug.WriteLine(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.FileSystemRights.ToString());
+            //}
+
             return View();
         }
 
@@ -56,20 +78,23 @@ namespace KevinSharp.Web.Controllers
             List<string[]> efficient = new List<string[]>();
             List<string[]> intense = new List<string[]>();
 
-            foreach (TimeSlotGroup tsg in course.TimeSlotGroups)
+            if (course != null)
             {
-                if (tsg.TimeSlots.Min(ts => ts.StartTimeUtc.Ticks) < DateTime.UtcNow.AddDays(-1).Ticks) continue;
-                if (tsg.TimeSlots.Min(ts => ts.StartTimeUtc.Ticks) > DateTime.UtcNow.AddDays(30).Ticks) continue;
+                foreach (TimeSlotGroup tsg in course.TimeSlotGroups)
+                {
+                    if (tsg.TimeSlots.Min(ts => ts.StartTimeUtc.Ticks) < DateTime.UtcNow.AddDays(-1).Ticks) continue;
+                    if (tsg.TimeSlots.Min(ts => ts.StartTimeUtc.Ticks) > DateTime.UtcNow.AddDays(30).Ticks) continue;
 
-                if (tsg.TimeSlots.Max(ts => ts.Duration) < 240)
-                {
-                    // effective
-                    efficient.Add(new string[2] { tsg.Code, tsg.ToString() });
-                }
-                else
-                {
-                    // intense
-                    intense.Add(new string[2] { tsg.Code, tsg.ToString() });
+                    if (tsg.TimeSlots.Max(ts => ts.Duration) < 240)
+                    {
+                        // effective
+                        efficient.Add(new string[2] { tsg.Code, tsg.ToString() });
+                    }
+                    else
+                    {
+                        // intense
+                        intense.Add(new string[2] { tsg.Code, tsg.ToString() });
+                    }
                 }
             }
 

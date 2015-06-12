@@ -80,6 +80,29 @@
         <!-- /Main Section -->
         @Html.Partial("_Footer")
 
+        @*
+    <!-- Persmission test to App_Data -->
+    note to myself: if there is an E_ACCESSDENIED error when we try to access the SQL CE database, we need to add Read&Execute rights to the IWAM_plesk(default) user on the "bin" folder
+    go to http://cp.kevinsharp.net/ / File Manager / ...
+    http://www.asp.net/mvc/overview/older-versions/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
+    <footer>
+        <br />
+        Current user: @System.Security.Principal.WindowsIdentity.GetCurrent().Name<br />
+        <br />
+        Permissions to ~/App_Data<br />
+        @foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/App_Data/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
+        {
+            @(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.AccessControlType.ToString() + ": " + ar.FileSystemRights.ToString())<br />
+        }
+        <br />
+        Permissions to ~/bin<br />
+        @foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/bin/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
+        {
+            @(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.AccessControlType.ToString() + ": " + ar.FileSystemRights.ToString())<br />
+        }
+    </footer>
+        *@
+
         <!-- Scroll To Top -->
         <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
     </div>
