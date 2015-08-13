@@ -1,0 +1,4 @@
+Sitemap: http://www.kevinsharp.net/sitemap.xml
+User-agent: *
+Disallow: /bin/
+Disallow: /App_Data/

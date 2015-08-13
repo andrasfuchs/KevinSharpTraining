@@ -228,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\dummy.txt" />
+    <Content Include="BingSiteAuth.xml" />
     <Content Include="Content\animations.css" />
     <Content Include="Content\animations.min.css">
       <DependentUpon>animations.css</DependentUpon>
@@ -486,6 +487,7 @@
     <Content Include="Img\slider\slider-bg-2.jpg" />
     <Content Include="Img\transparent.png" />
     <Content Include="Img\whitebg_big.png" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
@@ -523,6 +525,7 @@
     <Content Include="Content\fonts\font-awesome\scss\_animated.scss" />
     <Content Include="Content\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Compile Include="App_Start\Startup.Logger.cs" />
+    <None Include="Properties\PublishProfiles\kevinsharp.net - Web Deploy.pubxml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -628,6 +631,7 @@
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="Scripts\wow.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="sitemap.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

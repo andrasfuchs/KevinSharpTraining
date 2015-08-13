@@ -43,11 +43,18 @@
                         <p>
                             Subscribe to my email newsletter to receive my updates and promotions.
                         </p>
-                        <form method="get" action="#" class="optiondisabled">
+
+                        <form method="post" action="http://kevinsharp.us11.list-manage.com/subscribe/post?u=4dce87108bdf13e10d1bd933f&amp;id=2eb4f9244f" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                             <div class="input-group">
-                                <input type="text" value="your e-mail" onfocus="if (this.value == 'your e-mail') this.value = '';" onblur="    if (this.value == '') this.value = 'your e-mail';" class="subscribe form-control">
+                                <input name="EMAIL" type="email" value="your e-mail"
+                                       onfocus="if (this.value == 'your e-mail') this.value = '';"
+                                       onblur="if (this.value == '') this.value = 'your e-mail';"
+                                       onkeyup="document.getElementById('newslettersubscribefooter').disabled = (this.value == '') || (this.value == 'your e-mail');"
+                                       class="subscribe form-control" required>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;"><input type="text" name="b_4dce87108bdf13e10d1bd933f_2eb4f9244f" tabindex="-1" value=""></div>
                                 <span class="input-group-btn">
-                                    <button class="btn subscribe-btn" type="button" id="newslettersubscribefooter">OK</button>
+                                    <input class="btn subscribe-btn" type="submit" name="subscribe" id="newslettersubscribefooter" onclick="form.submit();" value="OK" disabled="disabled" />
                                 </span>
                             </div>
                             <!-- /input-group -->

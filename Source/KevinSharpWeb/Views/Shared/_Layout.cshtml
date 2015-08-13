@@ -1,8 +1,13 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Kevin Sharp Training</title>
+
+    <meta http-equiv="content-language" content="en">
+
+    <meta name="description" content="Kevin Sharp Training: in-depth .NET, C#, HTML5, jQuery and Bootstrap courses and personalized one-on-one tranings from a Microsoft Ceritfied Professional">
+    <meta name="keywords" content="Kevin Sharp, training, IT training, programming, .NET, C#, C Sharp, Desktop, Web, HTML5, jQuery, Bootstrap, software development, software developer">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +59,7 @@
             ga = function (arg) { console.log("ga:", arguments); };
         }
 
-        ga('create', 'UA-63931838-1', 'auto');
+        ga('create', 'UA-61324346-1', 'auto');
         ga('require', 'linkid', 'linkid.js');
         ga('send', 'pageview');
 
@@ -81,26 +86,26 @@
         @Html.Partial("_Footer")
 
         @*
-    <!-- Persmission test to App_Data -->
-    note to myself: if there is an E_ACCESSDENIED error when we try to access the SQL CE database, we need to add Read&Execute rights to the IWAM_plesk(default) user on the "bin" folder
-    go to http://cp.kevinsharp.net/ / File Manager / ...
-    http://www.asp.net/mvc/overview/older-versions/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
-    <footer>
-        <br />
-        Current user: @System.Security.Principal.WindowsIdentity.GetCurrent().Name<br />
-        <br />
-        Permissions to ~/App_Data<br />
-        @foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/App_Data/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
-        {
-            @(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.AccessControlType.ToString() + ": " + ar.FileSystemRights.ToString())<br />
-        }
-        <br />
-        Permissions to ~/bin<br />
-        @foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/bin/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
-        {
-            @(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.AccessControlType.ToString() + ": " + ar.FileSystemRights.ToString())<br />
-        }
-    </footer>
+            <!-- Persmission test to App_Data -->
+            note to myself: if there is an E_ACCESSDENIED error when we try to access the SQL CE database, we need to add Read&Execute rights to the IWAM_plesk(default) user on the "bin" folder
+            go to http://cp.kevinsharp.net/ / File Manager / ...
+            http://www.asp.net/mvc/overview/older-versions/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
+            <footer>
+                <br />
+                Current user: @System.Security.Principal.WindowsIdentity.GetCurrent().Name<br />
+                <br />
+                Permissions to ~/App_Data<br />
+                @foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/App_Data/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
+                {
+                    @(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.AccessControlType.ToString() + ": " + ar.FileSystemRights.ToString())<br />
+                }
+                <br />
+                Permissions to ~/bin<br />
+                @foreach (System.Security.AccessControl.FileSystemAccessRule ar in System.IO.Directory.GetAccessControl(Server.MapPath("~/bin/")).GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier)))
+                {
+                    @(ar.IdentityReference.ToString() + " " + (ar.IsInherited ? "[inherited] " : "") + ar.AccessControlType.ToString() + ": " + ar.FileSystemRights.ToString())<br />
+                }
+            </footer>
         *@
 
         <!-- Scroll To Top -->
@@ -111,6 +116,10 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/scripts")
     <script type="text/javascript" src="@Url.Content("/Scripts/Views/Home/Global.js")"></script>
+
+    <script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -670,7 +670,9 @@ h2.title {
    ================================================== */
 
 .btn:hover,
-.btn:focus { color: #fff }
+.btn:focus { 
+    color: #fff;
+}
 
 .input-group-btn .btn { height: 62px }
 
@@ -4657,12 +4659,6 @@ h2.form-signin-heading {
     outline-offset: -2px;
 }
 
-.btn:focus,
-.btn:hover {
-    color: #333;
-    text-decoration: none;
-}
-
 .btn.active,
 .btn:active {
     outline: 0;
@@ -5584,4 +5580,8 @@ div.courses span.coursecode {
 #loginwarninglink {
     color: #000;
     cursor: pointer;
+}
+
+.content-box-info h1 {
+    font-size: 30px;
 }

@@ -57,7 +57,7 @@ namespace KevinSharp.Web
                 { 
                     SessionId = Session.SessionID,
                     SessionStartedUtc = (DateTime)Session["SessionStartedUtc"],
-                    SessionDuration = (DateTime.UtcNow - (DateTime)Session["SessionStartedUtc"]).ToString("HH:mm:ss.fff"),
+                    SessionDuration = (DateTime.UtcNow - (DateTime)Session["SessionStartedUtc"]).ToString("G"),
                     UserEmail = Session["UserEmail"].ToString(),
                     Events = JsonConvert.SerializeObject((SessionEvent[])Session["SessionEvents"])
                 };

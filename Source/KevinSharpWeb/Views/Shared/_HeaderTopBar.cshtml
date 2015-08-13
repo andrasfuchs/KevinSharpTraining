@@ -11,12 +11,18 @@
                     <li class="stackoverflow"><a href="http://stackoverflow.com/users/980247/andras"><i class="fa fa-stack-overflow"></i></a></li>
                     <li class="rss"><a href="#"><i class="fa fa-rss"></i></a></li>
                 </ul>
-                <form method="get" action="#" class="headertop optiondisabled">
+                <form method="post" class="headertop" action="http://kevinsharp.us11.list-manage.com/subscribe/post?u=4dce87108bdf13e10d1bd933f&amp;id=2eb4f9244f" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                     <div class="input-group headertop">
                         <span class="headertop">GET UPDATES</span>
-                        <input type="text" value="your e-mail" onfocus="if (this.value == 'your e-mail') this.value = '';" onblur="    if (this.value == '') this.value = 'your e-mail';" class="subscribe form-control headertop">
+                        <input name="EMAIL" type="email" value="your e-mail" 
+                               onfocus="if (this.value == 'your e-mail') this.value = '';" 
+                               onblur="if (this.value == '') this.value = 'your e-mail';" 
+                               onkeyup="document.getElementById('newslettersubscribetopbar').disabled = (this.value == '') || (this.value == 'your e-mail');" 
+                               class="subscribe form-control headertop" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_4dce87108bdf13e10d1bd933f_2eb4f9244f" tabindex="-1" value=""></div>
                         <span class="input-group-btn">
-                            <button class="btn subscribe-btn headertop" type="button" id="newslettersubscribetopbar">Subscribe</button>
+                            <input class="btn subscribe-btn headertop" type="submit" name="subscribe" id="newslettersubscribetopbar" onclick="form.submit();" value="Subscribe" disabled="disabled" />
                         </span>
                     </div>
                     <!-- /input-group -->
