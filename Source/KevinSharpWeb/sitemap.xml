@@ -7,17 +7,32 @@
 
 <url>
   <loc>http://www.kevinsharp.net/</loc>
+  <lastmod>2015-08-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
 </url>
 <url>
   <loc>http://www.kevinsharp.net/Home/Courses</loc>
+  <lastmod>2015-08-01</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.8</priority>
 </url>
 <url>
   <loc>http://www.kevinsharp.net/Home/About</loc>
+  <lastmod>2015-08-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>http://www.kevinsharp.net/Home/Contact</loc>
+  <lastmod>2015-08-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>  
 </url>
 <url>
   <loc>http://www.kevinsharp.net/Home/OneOnOne</loc>
+  <lastmod>2015-08-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
 </url>
 </urlset>
